@@ -5,7 +5,6 @@ var Articleschema = new Schema({
 	title: {
 		type: String,
 		required: true,
-		text: true
 	},
 	link: {
 		type: String,
@@ -36,6 +35,8 @@ var Articleschema = new Schema({
 		ref: "Note"
 	}
 });
+
+Articleschema.index({title: "text"});
 
 var Article  = mongoose.model("Article", Articleschema);
 module.exports = Article;
