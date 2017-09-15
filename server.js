@@ -116,7 +116,7 @@ app.get("/:id", function(req, res) {
 
 app.post("/search", function(req, res) {
 	console.log(req.body.search);
-	Article.find({$text: {$search: req.body.search, $caseSensitive: false}}, function(err, data) {
+	Article.find({$text: {$search: req.body.search, $caseSensitive: false}}, null, {sort: {created: -1}}, function(err, data) {
 		console.log(data);
 		if (data.length === 0) {
 			res.render("placeholder", {message: "Nothing has been found. Please try other keywords."});
