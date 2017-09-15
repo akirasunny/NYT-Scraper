@@ -156,7 +156,7 @@ header button {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.9);
-    z-index: 1;
+    z-index: 4;
 }
 
 #note {
@@ -213,7 +213,6 @@ header button {
 
 #note-body {
 	width: 100%;
-	min-height: 300px;
 	padding: 5px;
 	font-size: 15px;
 }
@@ -234,5 +233,5 @@ footer {
 	font-size: 15px;
 	border-top: 8px solid #3e9cfc;
 	opacity: 0.7;
-	z-index: 5;
+	z-index: 3;
 }
