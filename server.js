@@ -13,8 +13,15 @@ var request = require("request");
 
 var Note = require("./models/Note");
 var Article = require("./models/Article");
+var databaseUrl = 'mongodb://localhost/nyt';
 
-mongoose.connect('mongodb://localhost/nyt');
+if (process.env.MONGODB_URI) {
+	mongoose.connect(process.env.MONGODB_URI);
+}
+else {
+	mongoose.connect(databaseUrl);
+};
+
 mongoose.Promise = Promise;
 var db = mongoose.connection;
 
